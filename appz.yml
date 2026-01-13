@@ -29,6 +29,7 @@ volumes:
 properties:
   revision: 12
   JAVA_HEAPSIZE: 4g
+  OPENSEARCH_INITIAL_ADMIN_PASSWORD: "admin"
   
   
   
