@@ -4,24 +4,24 @@ app:
   notify: "asunil@ecloudcontrol.com"
 
 build:
-  version: 8.15
+  version: 2.15
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: elasticsearch-8.15
+  image_template: opensearch-2.15
 
 deploy:
-  context: athulecloud-1207/DEV
-  type: elasticsearch6
+  context: anandp0/DEV
+  type: opensearch
   replicas: 1
   port:
     - 9200
     - 9300
 
 volumes:
-  - claim: elasticsearch-data
+  - claim: opensearch-data
     mount: /appz/data
-    name: elasticsearch-data
+    name: opensearch-data
     size: 20Gi
     mode: ReadWriteOnce
     class: microk8s-hostpath
