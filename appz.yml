@@ -12,16 +12,16 @@ build:
 
 deploy:
   context: anandp0/DEV
-  type: opensearch
+  type: elasticsearch6
   replicas: 1
   port:
     - 9200
     - 9300
 
 volumes:
-  - claim: opensearch-data
+  - claim: elasticsearch-data
     mount: /appz/data
-    name: opensearch-data
+    name: elasticsearch-data
     size: 20Gi
     mode: ReadWriteOnce
     class: microk8s-hostpath
